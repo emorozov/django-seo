@@ -13,7 +13,7 @@ class MetadataNode(template.Node):
     def __init__(self, metadata_name, variable_name, target, site, language):
         self.metadata_name = metadata_name
         self.variable_name = variable_name
-        self.target = template.Variable(target or 'request.path')
+        self.target = template.Variable(target or 'request.original_path')
         self.site = site and template.Variable(site) or None
         self.language = language and template.Variable(language) or None
 
